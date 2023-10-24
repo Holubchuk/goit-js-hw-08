@@ -23,6 +23,13 @@ if (localStorage.getItem('feedback-form-state')) {
 function handleSubmit(event) {
   event.preventDefault();
   localStorage.clear();
-  console.log(savedData);
+  if (email.value === "" || message.value === "") {
+    alert("Please, fill up the form completely!")
+  } else {
+    console.log({
+      email: email.value,
+      message: message.value,
+    });
+  }
   form.reset();
 };
